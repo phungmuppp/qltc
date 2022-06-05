@@ -1,5 +1,6 @@
 package com.example.ungdungdautien;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
@@ -12,16 +13,22 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+
 public class MainActivity extends AppCompatActivity {
 
     EditText editTextUser,editTextPassWorld;
     Button buttonDangKy,buttonDangNhap;
-    DBHelper DB;
+    FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mAuth=FirebaseAuth.getInstance();
         Anhxa();
         ControlButton();
     }
@@ -41,19 +48,21 @@ public class MainActivity extends AppCompatActivity {
                 String password=editTextPassWorld.getText().toString();
 
                 if (TextUtils.isEmpty(user)|| TextUtils.isEmpty(password))
-                    Toast.makeText(MainActivity.this, "Tên đăng nhập và mật khẩu không được để trống !", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Tên đăng nhập hoặc mật khẩu không được để trống !", Toast.LENGTH_SHORT).show();
                 else {
-                    Boolean checkuserpassword=DB.checkusernamepassword(user,password);
-                    if (checkuserpassword==true){
-                        Toast.makeText(MainActivity.this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(getApplicationContext(),HomeMain.class);
-                        startActivity(intent);
-                    }else {
-                        Toast.makeText(MainActivity.this, "Đăng nhập không thành công", Toast.LENGTH_SHORT).show();
-                    }
+                    mAuth.signInWithEmailAndPassword(user,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()){
+                                Toast.makeText(MainActivity.this,"Đăng nhập thành công!",Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(getApplicationContext(),HomeMain.class);
+                                startActivity(intent);
+                            }else{
+                                Toast.makeText(MainActivity.this,"Đăng nhập không thành công!",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
                 }
-
-
             }
         });
     }
@@ -64,6 +73,5 @@ public class MainActivity extends AppCompatActivity {
         editTextPassWorld =(EditText) findViewById(R.id.editTextPassWord);
         buttonDangKy=(Button)findViewById(R.id.buttonDangKy);
         buttonDangNhap=(Button)findViewById(R.id.buttonDangNhap);
-        DB = new DBHelper(this);
     }
 }
