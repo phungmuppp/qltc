@@ -3,11 +3,10 @@ package com.example.ungdungdautien;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -28,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mAuth=FirebaseAuth.getInstance();
         Anhxa();
         ControlButton();
     }
@@ -37,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         buttonDangKy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), dangky.class);
+                Intent intent = new Intent(MainActivity.this, testDangky.class);
                 startActivity(intent);
             }
         });
@@ -73,5 +71,6 @@ public class MainActivity extends AppCompatActivity {
         editTextPassWorld =(EditText) findViewById(R.id.editTextPassWord);
         buttonDangKy=(Button)findViewById(R.id.buttonDangKy);
         buttonDangNhap=(Button)findViewById(R.id.buttonDangNhap);
+        mAuth=FirebaseAuth.getInstance();
     }
 }

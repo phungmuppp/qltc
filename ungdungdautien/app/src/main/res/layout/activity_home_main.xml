@@ -1,9 +1,214 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/bg_trangchu"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".HomeMain">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_header"
+        android:layout_margin="10dp"
+        android:paddingBottom="30dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp"
+        android:orientation="horizontal">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_avatar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/default_avatar" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:textSize="20sp"
+                    android:text="Xin chào "
+                    android:textColor="@color/white"
+                    android:layout_marginBottom="5dp"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/txv_name"
+                    android:layout_width="wrap_content"
+                    android:textSize="20sp"
+                    android:text="Phụng"
+                    android:textColor="@color/white"
+                    android:layout_marginBottom="5dp"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:textSize="20sp"
+                    android:text=" !"
+                    android:textColor="@color/white"
+                    android:layout_marginBottom="5dp"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Tổng số dư"
+                android:textColor="@color/white"
+                android:layout_height="wrap_content"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/txt_money"
+                    android:layout_width="wrap_content"
+                    android:text="1.000.000.000"
+                    android:textColor="@color/white"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text=" đ"
+                    android:textColor="@color/white"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_maQR"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:drawableTop="@drawable/maQr"
+            android:backgroundTint="@color/white"
+            android:textColor="#212121"
+            android:gravity="center"
+            android:paddingTop="15dp"
+            android:paddingHorizontal="5dp"
+            android:layout_marginRight="5dp"
+            android:text="Mã Qr thanh toán" />
+
+        <Button
+            android:id="@+id/btn_quetQR"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:backgroundTint="@color/white"
+            android:textColor="#212121"
+            android:paddingTop="15dp"
+            android:drawableTop="@drawable/quetQr"
+            android:text="Quét mã Qr" />
+
+        <Button
+            android:id="@+id/btn_quetHD"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:backgroundTint="@color/white"
+            android:textColor="#212121"
+            android:paddingTop="15dp"
+            android:layout_marginLeft="5dp"
+            android:drawableTop="@drawable/quethoadon"
+            android:text="Quét hóa đơn" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btn_thongke"
+            android:layout_width="130dp"
+            android:backgroundTint="@color/white"
+            android:textColor="#212121"
+            android:paddingTop="15dp"
+            android:layout_marginRight="5dp"
+            android:drawableTop="@drawable/thongke"
+            android:text="Thống kê"
+            android:layout_height="130dp"/>
+        <Button
+            android:id="@+id/btn_cachoadon"
+            android:layout_width="130dp"
+            android:backgroundTint="@color/white"
+            android:textColor="#212121"
+            android:paddingTop="15dp"
+            android:paddingHorizontal="5dp"
+            android:drawableTop="@drawable/hoadon"
+            android:text="Các hóa đơn đã thanh toán"
+            android:layout_height="130dp"/>
+        <Button
+            android:id="@+id/btn_taohoadon"
+            android:layout_width="130dp"
+            android:backgroundTint="@color/white"
+            android:textColor="#212121"
+            android:paddingTop="15dp"
+            android:paddingHorizontal="5dp"
+            android:layout_marginLeft="5dp"
+            android:drawableTop="@drawable/taohoadon"
+            android:text="Tạo hóa đơn"
+            android:layout_height="130dp"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btn_dichvu"
+            android:layout_marginRight="5dp"
+            android:layout_width="130dp"
+            android:backgroundTint="@color/white"
+            android:textColor="#212121"
+            android:paddingTop="15dp"
+            android:drawableTop="@drawable/dichvu"
+            android:text="Dịch vụ"
+            android:layout_height="130dp"/>
+        <Button
+            android:id="@+id/btn_caidat"
+            android:layout_width="130dp"
+            android:backgroundTint="@color/white"
+            android:textColor="#212121"
+            android:drawableTop="@drawable/caidat"
+            android:text="Cài đặt"
+            android:paddingTop="15dp"
+            android:layout_height="130dp"/>
+        <Button
+            android:id="@+id/btn_fanpage"
+            android:layout_width="130dp"
+            android:backgroundTint="@color/white"
+            android:textColor="#212121"
+            android:drawableTop="@drawable/facebook1"
+            android:layout_marginLeft="5dp"
+            android:paddingTop="15dp"
+            android:text="Fanpage"
+            android:layout_height="130dp"/>
+
+
+
+
+
+
+    </LinearLayout>
+
+
+
+<!--    <Button-->
+<!--        android:id="@+id/buttonDangXuat"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Đăng xuất"-->
+<!--        tools:layout_editor_absoluteX="11dp"-->
+<!--        tools:layout_editor_absoluteY="213dp" />-->
+</LinearLayout>

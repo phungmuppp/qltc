@@ -3,9 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/qltc/ungdungdautien/app/src/main/res/drawable/bg_corner.xml" value="0.289" />
+        <entry key="..\:/qltc/ungdungdautien/app/src/main/res/drawable/bg_header.xml" value="0.289" />
+        <entry key="..\:/qltc/ungdungdautien/app/src/main/res/drawable/bg_luachon.xml" value="0.289" />
+        <entry key="..\:/qltc/ungdungdautien/app/src/main/res/drawable/bg_trangchu.xml" value="0.289" />
         <entry key="..\:/qltc/ungdungdautien/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1945" />
-        <entry key="..\:/qltc/ungdungdautien/app/src/main/res/layout/activity_dangky.xml" value="0.20416666666666666" />
-        <entry key="..\:/qltc/ungdungdautien/app/src/main/res/layout/activity_main.xml" value="0.18085106382978725" />
+        <entry key="..\:/qltc/ungdungdautien/app/src/main/res/layout/activity_dangky.xml" value="0.1" />
+        <entry key="..\:/qltc/ungdungdautien/app/src/main/res/layout/activity_home_main.xml" value="0.1" />
+        <entry key="..\:/qltc/ungdungdautien/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/qltc/ungdungdautien/app/src/main/res/layout/activity_splash.xml" value="0.22780797101449277" />
+        <entry key="..\:/qltc/ungdungdautien/app/src/main/res/layout/activity_test_dangky.xml" value="0.22" />
+        <entry key="..\:/qltc/ungdungdautien/app/src/main/res/layout/activity_trang1.xml" value="0.25" />
         <entry key="..\:/ungdungdautien/app/src/main/res/drawable/bg_corner.xml" value="0.2135" />
         <entry key="..\:/ungdungdautien/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2135" />
         <entry key="..\:/ungdungdautien/app/src/main/res/layout/activity_dangky.xml" value="0.33" />
